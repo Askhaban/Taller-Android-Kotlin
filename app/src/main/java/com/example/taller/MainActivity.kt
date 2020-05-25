@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -19,7 +20,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         //variables que son para iniciar sesion
         val dbReference: DatabaseReference
         val db: FirebaseDatabase
@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
 
         //Ahora iniciamos sesion con el boton
         Login.setOnClickListener(){
-
             //aqui estoy tomando los valores que he escrito en el formulario inicial, para iniciar sesion
             user= txtUser.text.toString()
             pwd=Txtpwd.text.toString()
@@ -72,6 +71,7 @@ Toast.makeText(this,"Al parecer tienes usuario o contraseña incorrecto", Toast.
                     intent= Intent(this,menuLateral::class.java)
                     intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
                     startActivity(intent)
+                    progreso.visibility= View.VISIBLE
             finish()
                 } else {
                   //Si la autenticacion falla, entonces mostrara el siguiente mensaje xD
