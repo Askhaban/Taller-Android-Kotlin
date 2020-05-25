@@ -21,12 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //variables que son para iniciar sesion
-        val dbReference: DatabaseReference
-        val db: FirebaseDatabase
         auth = FirebaseAuth.getInstance()
-        db= FirebaseDatabase.getInstance()
-        dbReference=db.reference.child("Perfiles")
-
 //----------------------------------------------------------------------------------------//-----------------
         var user:String
         var pwd:String
@@ -82,11 +77,6 @@ Toast.makeText(this,"Al parecer tienes usuario o contraseña incorrecto", Toast.
 
                 // ...
             }
-
-
-
-
-
     }
 //con esta funcion permite que la sesion no se cierre.
     override fun onStart() {
@@ -102,5 +92,11 @@ Toast.makeText(this,"Al parecer tienes usuario o contraseña incorrecto", Toast.
     }
     override fun onBackPressed() {
         super.finish()
+    }
+    fun register(view: View){
+        intent= Intent(this,registerUsers::class.java)
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        startActivity(intent)
+        finish()
     }
 }
