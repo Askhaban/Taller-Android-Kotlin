@@ -28,7 +28,7 @@
     <fragment
         android:id="@+id/registrom"
         android:name="com.example.taller.fragment.registroM"
-        android:label="pue"
+        android:label="Registro Motocicletas"
         tools:layout="@layout/fragment_registro_m" />
 
 </navigation>
