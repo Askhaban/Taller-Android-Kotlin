@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.taller.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="Inicio"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_nav_home_to_registrom"
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.taller.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Perfil"
         tools:layout="@layout/fragment_slideshow" >
         <action
             android:id="@+id/action_nav_slideshow_to_registrom"
